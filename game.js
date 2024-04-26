@@ -18,13 +18,6 @@ function showTextNode(textNodeIndex) {
         textNodeIndex)
         textElement.innerHTML = textNode.text
         
-        // Replace the ad placeholder with an ad
-        fetch('http://localhost:3000/api/getAd')
-        .then(response => response.json())
-        .then(ad => {
-          
-        document.getElementsByClassName('ad-placeholder')[0].innerText = ad[0].text
-        })
        
         //The buttons are hidden to have only the needed ones appear 
         while (optionButtonsElement.firstChild) {
@@ -63,7 +56,7 @@ function selectOption(option) {
 const textNodes = [
     {
         id: 1, 
-        text: 'you wake up in <span class="ad-placeholder"> the place </span> without your wallet but some coins on the floor next to you',
+        text: 'you wake up in the place without your wallet but some coins on the floor next to you',
         options: [
             {
                 text: 'Grab the coins and get up', 
