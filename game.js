@@ -63,7 +63,7 @@ function selectOption(option) {
 const textNodes = [
     {
         id: 1, 
-        text: 'you wake up in <span class="ad-placeholder"> the place </span> without your wallet but some coins on the floor next to you',
+        text: 'you wake up in  the place </span> without your wallet but some coins on the floor next to you',
         options: [
             {
                 text: 'Grab the coins and get up', 
@@ -80,18 +80,18 @@ const textNodes = [
 
     {
         id:2,
-        text: 'You walk out and decide to walk toward the small village and see a little stall on the side of the road',
+        text: 'You walk out and decide to walk toward the small village and see a <span class="ad-placeholder"> little stall </span>  on the side of the road',
         options: [
             {
-            text: 'Purchase a sword',
+            text: 'Purchase a drink',
             requiredState: (currentState) => currentState.someCoins,
-            setState: { someCoins: false, sword: true},
+            setState: { someCoins: false, drink: true},
             nextText:3
              },
             {
-            text: 'Purchase a shield',
+            text: 'Purchase a snack',
             requiredState: (currentState) => currentState.someCoins,
-            setState: { someCoins: false, shield: true},
+            setState: { someCoins: false, snack: true},
             nextText:3
             },
             {
@@ -104,18 +104,18 @@ const textNodes = [
 
     {
         id:3,
-        text: 'After leaving the merchant you start to feel tired and stumble upon a small town next to a dangerous looking castle',
+        text: 'After leaving the merchant you start to feel tired and walk past a Gym',
         options: [
             {
-            text: 'Explore the castle',
+            text: 'Go inside the gym',
             nextText:4
              },
             {
-            text: 'Find a room to sleep at in the town',
+            text: 'Find a room to sleep at in a hotel',
             nextText:5
             },
             {
-                text: 'Find some Hay in the stable to sleep in ',
+                text: 'Go snooze in a starbucks',
                 nextText:6
             }
          ]
@@ -123,7 +123,7 @@ const textNodes = [
 
     {
         id:4,
-        text: 'You are tired going into the castle and fall alseep, a horrid moster comes and kills you while you sleep',
+        text: 'You are tired going into the gym and fall alseep, its while you are on a pelaton and you die from a awkward fall',
         options: [
             {
             text: 'Restart', 
@@ -135,7 +135,7 @@ const textNodes = [
 
     {
         id: 5,
-        text: 'Without any money to buy a room you break into the nearest inn and fall asleep. After a few hours of sleep the owner of the inn finds you and has the town guard lock you in a cell.',
+        text: 'Without any money to buy a room you lie about paying the next day. The next morning the hotel manager argues with you and calls the guards.',
         options: [
           {
             text: 'Restart',
@@ -145,42 +145,42 @@ const textNodes = [
       },
       {
         id: 6,
-        text: 'You wake up well rested and full of energy ready to explore the nearby castle.',
+        text: 'You wake up well rested and full of energy ready to go back to the gym.',
         options: [
           {
-            text: 'Explore the castle',
+            text: 'Go back to gym',
             nextText: 7
           }
         ]
       },
       {
         id: 7,
-        text: 'While exploring the castle you come across a horrible monster in your path.',
+        text: 'When you enter the Gym a trainer approaches you',
         options: [
           {
-            text: 'Try to run',
+            text: 'Try to move away',
             nextText: 8
           },
           {
-            text: 'Attack it with your sword',
-            requiredState: (currentState) => currentState.sword,
+            text: 'Take a sip of your drink',
+            requiredState: (currentState) => currentState.drink,
             nextText: 9
           },
           {
-            text: 'Hide behind your shield',
-            requiredState: (currentState) => currentState.shield,
+            text: 'Nervously take a bite of your snack',
+            requiredState: (currentState) => currentState.snack,
             nextText: 10
           },
           {
-            text: 'Throw the blue goo at it',
-            requiredState: (currentState) => currentState.blueGoo,
+            text: 'Fall down and drop all your coins on the floor',
+            requiredState: (currentState) => currentState.fewCoins,
             nextText: 11
           }
         ]
       },
       {
         id: 8,
-        text: 'Your attempts to run are in vain and the monster easily catches.',
+        text: 'You overthink about the trainer considering you rude and leave the gym',
         options: [
           {
             text: 'Restart',
@@ -190,7 +190,7 @@ const textNodes = [
       },
       {
         id: 9,
-        text: 'You foolishly thought this monster could be slain with a single sword.',
+        text: 'The trainer scolds you for drinking too much before a workout, you ignore them and get stomach aches while exercising',
         options: [
           {
             text: 'Restart',
@@ -200,7 +200,7 @@ const textNodes = [
       },
       {
         id: 10,
-        text: 'The monster laughed as you hid behind your shield and ate you.',
+        text:  'The trainer judges you, and you leave in shame',
         options: [
           {
             text: 'Restart',
@@ -210,10 +210,10 @@ const textNodes = [
       },
       {
         id: 11,
-        text: 'You threw your jar of goo at the monster and it exploded. After the dust settled you saw the monster was destroyed. Seeing your victory you decide to claim this castle as your and live out the rest of your days there.',
+        text: 'You fall down and your coins roll away. You see a person, asleep in the gym, pick them up',
         options: [
           {
-            text: 'Congratulations. Play Again.',
+            text: 'Restart',
             nextText: -1
           }
         ]
